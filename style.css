@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Creepster', cursive;
+}
+
+body {
+    background-color: #1e1e1e;
+    color: #ff6f61;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ghosts {
+    position: relative;
+}
+
+.ghost {
+    width: 50px;
+    height: auto;
+    position: absolute;
+}
+
+.ghost1 {
+    top: 10%;
+    left: 10%;
+}
+
+.ghost2 {
+    top: 20%;
+    right: 20%;
+}
+
+.ghost3 {
+    top: 30%;
+    left: 50%;
+}
+
+.main-content {
+    text-align: center;
+    margin-top: 40px;
+}
+
+#pumpkin {
+    font-size: 5rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#pumpkin:hover {
+    transform: scale(1.1);
+}
+
+/* General Styles (already included in previous CSS) */
+/* ... */
+
+/* Fog Background */
+.fog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.2));
+    opacity: 0;
+    pointer-events: none;
+}
+
+.fog1 {
+    animation: fog-move 10s linear infinite;
+}
+
+.fog2 {
+    animation: fog-move 15s linear infinite reverse;
+}
+
+/* Bats */
+.bats {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    pointer-events: none;
+}
+
+.bat {
+    width: 60px;
+    position: absolute;
+}
+
+.bat1 {
+    top: 10%;
+    left: 20%;
+}
+
+.bat2 {
+    top: 20%;
+    right: 30%;
+}
+
+.bat3 {
+    top: 30%;
+    left: 60%;
+}
+
+/* Stars Background */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://cdn.pixabay.com/photo/2016/03/31/17/33/icons-1293736_640.png') repeat;
+    opacity: 0.3;
+    animation: stars-move 50s linear infinite;
+}
+
+/* Fog and Stars Animation */
+@keyframes fog-move {
+    0% { transform: translate(-5%, -5%); }
+    50% { transform: translate(5%, 5%); }
+    100% { transform: translate(-5%, -5%); }
+}
+
+@keyframes stars-move {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+}
